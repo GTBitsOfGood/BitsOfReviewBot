@@ -31,7 +31,7 @@ app.message('hello', ({ message, say }) => {
 });
 
 app.event('app_mention', ({ event, say }) => {
-    if (event.text.endsWith('begin')) {
+    if (event.text.includes('begin')) {
         say({
             blocks: [
                 {
@@ -61,9 +61,209 @@ app.event('app_mention', ({ event, say }) => {
 app.action('button_click', ({ body, ack, say }) => {
     // Acknowledge the action
     ack();
-    say(`Ok, I will pretend to grab an application from the database for you, <@${body.user.id}>...`);
 
-    // TODO: Present the form, populated with data from the database
+    // TODO: Instead of static questions & answers, we need to pull this data from the db.
+    // TODO: Maybe turn this into a dialog?
+    say(`Ok, I will pretend to grab an application from the database for you, <@${body.user.id}>...`);
+    say({
+        blocks: [
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*QUESTION #1:* \nI am text from the database."
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*ANSWER #1:* ```I am also text from the database. I'm more important though!```"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "Evaluation Score"
+                },
+                "accessory": {
+                    "type": "static_select",
+                    "placeholder": {
+                        "type": "plain_text",
+                        "text": "Select an item",
+                        "emoji": true
+                    },
+                    "options": [
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "1 - Poor",
+                                "emoji": true
+                            },
+                            "value": "value-0"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "2 - Fair",
+                                "emoji": true
+                            },
+                            "value": "value-1"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "3 - Good",
+                                "emoji": true
+                            },
+                            "value": "value-2"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "4 - Excellent",
+                                "emoji": true
+                            },
+                            "value": "value-2"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*QUESTION #2:* \nI am text from the database."
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*ANSWER #2:* ```I am also text from the database. I'm more important though!```"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "Evaluation Score"
+                },
+                "accessory": {
+                    "type": "static_select",
+                    "placeholder": {
+                        "type": "plain_text",
+                        "text": "Select an item",
+                        "emoji": true
+                    },
+                    "options": [
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "1 - Poor",
+                                "emoji": true
+                            },
+                            "value": "value-0"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "2 - Fair",
+                                "emoji": true
+                            },
+                            "value": "value-1"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "3 - Good",
+                                "emoji": true
+                            },
+                            "value": "value-2"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "4 - Excellent",
+                                "emoji": true
+                            },
+                            "value": "value-2"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*QUESTION #3:* \nI am text from the database."
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*ANSWER #3:* ```I am also text from the database. I'm more important though!```"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "Evaluation Score"
+                },
+                "accessory": {
+                    "type": "static_select",
+                    "placeholder": {
+                        "type": "plain_text",
+                        "text": "Select an item",
+                        "emoji": true
+                    },
+                    "options": [
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "1 - Poor",
+                                "emoji": true
+                            },
+                            "value": "value-0"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "2 - Fair",
+                                "emoji": true
+                            },
+                            "value": "value-1"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "3 - Good",
+                                "emoji": true
+                            },
+                            "value": "value-2"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "4 - Excellent",
+                                "emoji": true
+                            },
+                            "value": "value-2"
+                        }
+                    ]
+                }
+            }
+        ]
+    });
 });
 
 (async () => {
