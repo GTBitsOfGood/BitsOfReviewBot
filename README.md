@@ -7,4 +7,5 @@ BORB acts as slackbot that helps serve up applications for members of the BoG to
 ## Contact
 
 James Wang: jameswang(@)gatech.edu
-Katt Pham
+
+Katt Pham: BLANK
