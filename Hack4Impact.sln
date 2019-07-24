@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "SlackBot-BoRB", "SlackBot-BoRB.njsproj", "{B0CB0C93-BD31-4D44-938A-E6625215ABD9}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB-BoRB", "..\DB-BoRB\DB-BoRB.sqlproj", "{A56664EF-3D29-4E5D-8B98-0E8CC211EDF5}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB-BoRB", "DB-BoRB\DB-BoRB.sqlproj", "{A56664EF-3D29-4E5D-8B98-0E8CC211EDF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
