@@ -7,7 +7,7 @@ const app = new App({
 });
 
 // Listens to incoming messages that contain "hello"
-app.message('hello', ({ message, say }) => {
+app.message('next', ({ message, say }) => {
     // say() sends a message to the channel where the event was triggered
     say({
         blocks: [
@@ -15,13 +15,13 @@ app.message('hello', ({ message, say }) => {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": `Hi <@${message.user}>!`
+                    "text": `Ok, <@${message.user}>! Click the button when you're ready to get the next application...`
                 },
                 "accessory": {
                     "type": "button",
                     "text": {
                         "type": "plain_text",
-                        "text": "Click me"
+                        "text": "Get Application"
                     },
                     "action_id": "button_click"
                 }
@@ -114,7 +114,7 @@ app.action('button_click', ({ body, ack, say }) => {
                         {
                             "text": {
                                 "type": "plain_text",
-                                "text": "3 - Good",
+                                "text": "3 - Average",
                                 "emoji": true
                             },
                             "value": "value-2"
@@ -122,10 +122,18 @@ app.action('button_click', ({ body, ack, say }) => {
                         {
                             "text": {
                                 "type": "plain_text",
-                                "text": "4 - Excellent",
+                                "text": "4 - Great",
                                 "emoji": true
                             },
-                            "value": "value-2"
+                            "value": "value-3"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "5 - Excellent",
+                                "emoji": true
+                            },
+                            "value": "value-4"
                         }
                     ]
                 }
@@ -180,7 +188,7 @@ app.action('button_click', ({ body, ack, say }) => {
                         {
                             "text": {
                                 "type": "plain_text",
-                                "text": "3 - Good",
+                                "text": "3 - Average",
                                 "emoji": true
                             },
                             "value": "value-2"
@@ -188,10 +196,18 @@ app.action('button_click', ({ body, ack, say }) => {
                         {
                             "text": {
                                 "type": "plain_text",
-                                "text": "4 - Excellent",
+                                "text": "4 - Great",
                                 "emoji": true
                             },
-                            "value": "value-2"
+                            "value": "value-3"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "5 - Excellent",
+                                "emoji": true
+                            },
+                            "value": "value-4"
                         }
                     ]
                 }
@@ -246,7 +262,7 @@ app.action('button_click', ({ body, ack, say }) => {
                         {
                             "text": {
                                 "type": "plain_text",
-                                "text": "3 - Good",
+                                "text": "3 - Average",
                                 "emoji": true
                             },
                             "value": "value-2"
@@ -254,10 +270,18 @@ app.action('button_click', ({ body, ack, say }) => {
                         {
                             "text": {
                                 "type": "plain_text",
-                                "text": "4 - Excellent",
+                                "text": "4 - Great",
                                 "emoji": true
                             },
-                            "value": "value-2"
+                            "value": "value-3"
+                        },
+                        {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "5 - Excellent",
+                                "emoji": true
+                            },
+                            "value": "value-4"
                         }
                     ]
                 }
