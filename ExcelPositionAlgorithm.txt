@@ -1,0 +1,3 @@
+if(equals(body('Get_response_details')?['rbeafdcebb922486586f24122d04c1bd5'], 'Bits of Developing?'), body('Get_response_details')?['r24f37722af914a89870b4bad867321f6'], if(equals(body('Get_response_details')?['rbeafdcebb922486586f24122d04c1bd5'], 'Bits of Designing?'), body('Get_response_details')?['r6662b466463c4bb98eac888a7954e59a'],if(equals(body('Get_response_details')?['rbeafdcebb922486586f24122d04c1bd5'], 'Bits of Bootcamping?'), body('Get_response_details')?['rd7d7ad4b05154169ab4410e127f82b92'],if(equals(body('Get_response_details')?['rbeafdcebb922486586f24122d04c1bd5'], 'Bits of Operationing?'), body('Get_response_details')?['rf8cdea9c15a64c2b91fd5c0fafefd17d'], body('Get_response_details')?['re74363549c474143a1de06fb7596507e']))))
+
+

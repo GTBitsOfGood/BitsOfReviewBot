@@ -21,13 +21,13 @@ CREATE TABLE Application
   TCQ4A NVARCHAR(512) TEXT NOT NULL -- Time Commitment Question 4 Answer
   TCQ5 int FOREIGN KEY REFERENCES LUTTimeCommitment(TCQ5),
   TCQ5A NVARCHAR(512) TEXT NOT NULL -- Time Commitment Question 5 Answer
-  Essay1Value int NOT NULL,
+  Essay1Value int,
   Essay1Q int FOREIGN KEY REFERENCES LUTPositionEssayQuestions(Position),-- Essay one question
   Essay1A TEXT NOT NULL,
-  Essay2Value int NOT NULL,
+  Essay2Value int,
   Essay2Q int FOREIGN KEY REFERENCES LUTEssayQuestions(1),-- Essay one question
   Essay2A TEXT NOT NULL,
-  Essay3Value int NOT NULL,
+  Essay3Value int,
   Essay3Q int FOREIGN KEY REFERENCES LUTEssayQuestions(2),-- Essay one question
   Essay3A TEXT NOT NULL,
   Linkedin NVARCHAR(256),
@@ -61,11 +61,11 @@ CREATE TABLE LUTTimeCommitment
   question NVARCHAR(512)
 )
 
-INSERT INTO LUTPosition VALUES (1, "What is your time commitment during the semester to the organization? Hrs/Wk");
-INSERT INTO LUTPosition VALUES (2, "What else are you involved in? ");
-INSERT INTO LUTPosition VALUES (3, "How many credits will you be taking during the semester?");
-INSERT INTO LUTPosition VALUES (4, "Are you available on Tuesdays from 6:30pm to 8pm?");
-INSERT INTO LUTPosition VALUES (5, "Are you available on Thursdays from 6:30pm to 8pm?");
+INSERT INTO LUTTimeCommitment VALUES (1, "What is your time commitment during the semester to the organization? Hrs/Wk");
+INSERT INTO LUTTimeCommitment VALUES (2, "What else are you involved in? ");
+INSERT INTO LUTTimeCommitment VALUES (3, "How many credits will you be taking during the semester?");
+INSERT INTO LUTTimeCommitment VALUES (4, "Are you available on Tuesdays from 6:30pm to 8pm?");
+INSERT INTO LUTTimeCommitment VALUES (5, "Are you available on Thursdays from 6:30pm to 8pm?");
 
 
 CREATE TABLE LUTPositionEssayQuestions
