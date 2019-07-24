@@ -6,6 +6,8 @@ CREATE TABLE Application
   GTEmail NVARCHAR(256) NOT NULL,
   RegEmail NVARCHAR(256),
   Major NVARCHAR(256) NOT NULL,
+  CurrentStatus int FOREIGN KEY REFERENCES LUTStatus(CurrentStatus),
+  Reviewer int NULL NULL, -- SLACK ID
   GradYear int NOT NULL,
   Position int FOREIGN KEY REFERENCES LUTPosition(Position),
   TimeCommitmentValue int NOT NULL,
@@ -31,6 +33,15 @@ CREATE TABLE Application
   Linkedin NVARCHAR(256),
   Github NVARCHAR(256),
 )
+
+CREATE TABLE LUTStatus 
+(
+  id int primary key, 
+  status NVARCHAR(32)
+)
+INSERT INTO LUTStatus VALUES (1, "INCOMPLETE");
+INSERT INTO LUTStatus VALUES (2, "IN PROGRESS");
+INSERT INTO LUTStatus VALueS (3, "COMPLETE");
 
 CREATE TABLE LUTPosition 
 (
