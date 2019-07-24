@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/BitsOfReviewBot/v15/.suo
+/node_modules
+/package-lock.json
