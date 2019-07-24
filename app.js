@@ -15,13 +15,13 @@ app.message('hello', ({ message, say }) => {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": `Hey there <@${message.user}>!`
+                    "text": `Hi <@${message.user}>!`
                 },
                 "accessory": {
                     "type": "button",
                     "text": {
                         "type": "plain_text",
-                        "text": "Click Me"
+                        "text": "Click me"
                     },
                     "action_id": "button_click"
                 }
@@ -30,10 +30,40 @@ app.message('hello', ({ message, say }) => {
     });
 });
 
+app.event('app_mention', ({ event, say }) => {
+    if (event.text.endsWith('begin')) {
+        say({
+            blocks: [
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": `Ok, <@${event.user}>!`
+                    },
+                    "accessory": {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Get Application"
+                        },
+                        "action_id": "button_click"
+                    }
+                }
+            ]
+        });
+    }
+    else {
+        say(`I'm sorry, <@${event.user}>, but I don't understand. :(`);
+    }
+});
+
+
 app.action('button_click', ({ body, ack, say }) => {
     // Acknowledge the action
     ack();
-    say(`<@${body.user.id}> clicked the button`);
+    say(`Ok, I will pretend to grab an application from the database for you, <@${body.user.id}>...`);
+
+    // TODO: Present the form, populated with data from the database
 });
 
 (async () => {
