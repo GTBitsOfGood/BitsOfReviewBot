@@ -1,0 +1,27 @@
+{
+  "name": "bitsofreviewbot",
+  "version": "1.0.0",
+  "description": "Hack4Impact Hack4Good BitsOfGood BitsOfReviewBot (BoRB)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GTBitsOfGood/BitsOfReviewBot.git"
+  },
+  "keywords": [
+    "Hack4Impact",
+    "Hack4Good",
+    "BitsOfGood"
+  ],
+  "author": "Katt Pham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GTBitsOfGood/BitsOfReviewBot/issues"
+  },
+  "homepage": "https://github.com/GTBitsOfGood/BitsOfReviewBot#readme",
+  "dependencies": {
+    "@slack/bolt": "^1.2.0"
+  }
+}
